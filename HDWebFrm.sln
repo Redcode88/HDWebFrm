@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDWebFrm", "HDWebFrm\HDWebFrm.csproj", "{B7DDD830-0EA5-4955-B5A2-B8C9F129FA76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackEnd", "BackEnd\BackEnd.csproj", "{3F60DFFC-90D2-4DBC-BA35-B01CC2AF4466}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7DDD830-0EA5-4955-B5A2-B8C9F129FA76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7DDD830-0EA5-4955-B5A2-B8C9F129FA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7DDD830-0EA5-4955-B5A2-B8C9F129FA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7DDD830-0EA5-4955-B5A2-B8C9F129FA76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F60DFFC-90D2-4DBC-BA35-B01CC2AF4466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F60DFFC-90D2-4DBC-BA35-B01CC2AF4466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F60DFFC-90D2-4DBC-BA35-B01CC2AF4466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F60DFFC-90D2-4DBC-BA35-B01CC2AF4466}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59DB8DC6-BF84-4444-BDA0-70EA30F48664}
+	EndGlobalSection
+EndGlobal
