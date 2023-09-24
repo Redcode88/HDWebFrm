@@ -21,7 +21,15 @@
         </div>
         <div class="form-group">
              <asp:Label ID="Label5" runat="server" Text="TicketDescription"></asp:Label>
-            <asp:TextBox ID="Txt_Des" runat="server"></asp:TextBox>
+            <asp:TextBox ID="Txt_Des" runat="server" Height="78px" Width="280px"></asp:TextBox>
+        </div>
+        <div class="form-group">
+             <asp:Label ID="Label6" runat="server" Text="Tiket Code"></asp:Label>
+            <asp:TextBox ID="TxtGuid" runat="server" Width="315px"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <asp:Label ID="LbAttach" runat="server" Text="Add Files"></asp:Label>
+            <asp:FileUpload ID="fileUpload1" runat="server" AllowMultiple="True" />
         </div>
         <div class="form-group">
             <asp:Button ID="Btn_Clear" runat="server" Text="Clear" OnClick="Btn_Clear_Click" />
