@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -18,20 +19,39 @@ namespace HDWebFrm
     {
         private string conn =
         ConfigurationManager.ConnectionStrings["dbcon"].ConnectionString;
+        public string UserName;
+        
+
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+
+
             if (!IsPostBack)
             {
                 var id = Guid.NewGuid();
                 TxtGuid.Text = id.ToString();
+                CurrentSession();
                 TicketRepsitory.FillCombo(Combo_FromDept, "[dbo].[GetALLDept]", "DepartmentName", "DepartmentName");
                 TicketRepsitory.FillCombo(Combo_ToDept, "[dbo].[GetALLDept]", "DepartmentName", "DepartmentName");
                 TicketRepsitory.FillCombo(Combo_St, "[dbo].[GetPer]", "Name", "Name");
             }
             
         }
+
+
+        public void CurrentSession()
+        {
+            UserName = User.Identity.Name;
+            if (Session["UserName"] != null)
+            {
+                UserName = Session["UserName"].ToString();
+                Txt_UserName.Text = UserName.ToString();
+            }
+        }
+
 
         private void clearTxt()
         {

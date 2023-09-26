@@ -11,43 +11,34 @@ namespace HDWebFrm
 {
 
 
-    public partial class SiteMaster
+    public partial class CreateRoll
     {
 
         /// <summary>
-        /// LnkCreateUsers control.
+        /// Txt_Roll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LnkCreateUsers;
+        protected global::System.Web.UI.WebControls.TextBox Txt_Roll;
 
         /// <summary>
-        /// LnkLogin control.
+        /// btn_cr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LnkLogin;
+        protected global::System.Web.UI.WebControls.Button btn_cr;
 
         /// <summary>
-        /// LnkLogOut control.
+        /// LblResult control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LnkLogOut;
-
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Label LblResult;
     }
 }
