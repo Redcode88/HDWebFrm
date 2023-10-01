@@ -1,16 +1,37 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="HDWebFrm._Default" %>
 
+<%@ Register Assembly="DevExpress.Web.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="row">
-        <div class="col-md-6">
-           <br />
-            <div class="form-group">
-            <asp:Label ID="Label1" runat="server" Text="Select Department"></asp:Label>
-            <asp:DropDownList ID="Combo_FromDeptSe" runat="server" Height="30px" Width="304px" AutoPostBack="True" OnSelectedIndexChanged="Combo_FromDeptSe_SelectedIndexChanged"></asp:DropDownList>
-        </div>
-        </div>
-    </div>
-  <hr />
-    <asp:GridView ID="Grd" runat="server">
-    </asp:GridView>
+   
+    <br />
+    <dx:aspxgridview runat="server" ID="Grd" Width="944px">
+        
+
+        <SettingsPager AlwaysShowPager="True">
+        </SettingsPager>
+        <Settings ShowGroupPanel="True" ShowFooter="True" />
+        <SettingsBehavior AllowSelectByRowClick="True" />
+<SettingsPopup>
+<FilterControl AutoUpdatePosition="False"></FilterControl>
+</SettingsPopup>
+ <SettingsSearchPanel Visible="True" />
+ 
+        <EditFormLayoutProperties>
+            <Items>
+                <dx:GridViewColumnLayoutItem Caption="Replay" ColSpan="1">
+                </dx:GridViewColumnLayoutItem>
+            </Items>
+        </EditFormLayoutProperties>
+       
+        
+
+        
+
+       
+        
+
+    </dx:aspxgridview>
+
+
 </asp:Content>

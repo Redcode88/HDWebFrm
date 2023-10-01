@@ -166,9 +166,9 @@ namespace HDWebFrm
                 }
                 Response.Redirect("Default.aspx");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception(ex.Message);
+                throw ;
             }
         }
 

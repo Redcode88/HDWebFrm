@@ -1,6 +1,10 @@
 ﻿using BackEnd.Repo;
+using DevExpress.Web;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,27 +14,61 @@ namespace HDWebFrm
 {
     public partial class _Default : Page
     {
+        public string UserName;
+        string conn = ConfigurationManager.ConnectionStrings["dbcon"].ConnectionString;
+
+        //Grd.Columns.Clear();
+        //var data = TicketRepsitory.GetTikByDept(UserName);
+        //Grd.DataSource = data;
+        //Grd.DataBind();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+           
+            if (Session["UserName"] != null)
             {
-                TicketRepsitory.FillCombo(Combo_FromDeptSe, "[dbo].[GetALLDept]", "DepartmentName", "DepartmentName");
+                UserName = Session["UserName"].ToString();
             }
 
+            else
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
+
+            var data = TicketRepsitory.GetTikByDept(UserName);
+            Grd.DataSource = data;
+            Grd.DataBind();
+
+            //using (SqlConnection cn = new SqlConnection(conn))
+            //{
+
+            //    if (cn.State != ConnectionState.Open)
+            //    {
+            //        cn.Open();
+            //    }
+
+
+            //    SqlCommand cmd = new SqlCommand("[dbo].[GetByDept]", cn);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@FrmUserName", UserName);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter();
+            //    da.SelectCommand = cmd;
+            //    da.Fill(ds, "nn");
+            //    da.SelectCommand.ExecuteScalar();
+            //    Grd.DataSource = ds;
+            //    Grd.DataBind();
+
+
+            //}
+
+
+
         }
 
-        
 
-        protected void Combo_FromDeptSe_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-                Grd.Columns.Clear();
-                var data = TicketRepsitory.GetTikByDept(Combo_FromDeptSe.SelectedItem.Value);
-                Grd.DataSource = data;
-                Grd.DataBind();
-            
-            
-           
-        }
+
+
     }
 }

@@ -25,10 +25,9 @@ namespace BackEnd.Repo
             SQLDAL.ConnectionString = conn;
             return SQLDAL.ReturnDataTableByProcedure("[dbo].[GetDeptName]", param).ToListOfType<Departments>();
         }
-        public static dynamic GetTikByDept(string ToDepartment)
+        public static dynamic GetTikByDept(string FrmUserName)
         {
-
-            SqlParameter param = new SqlParameter("ToDepartment", ToDepartment);
+            SqlParameter param = new SqlParameter("FrmUserName", FrmUserName);
             SQLDAL.ConnectionString = conn;
             return SQLDAL.ReturnDataTableByProcedure("[dbo].[GetByDept]", param);
         }

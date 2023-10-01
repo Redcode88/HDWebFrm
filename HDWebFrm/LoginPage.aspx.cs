@@ -22,7 +22,7 @@ namespace HDWebFrm
                 FormsAuthentication.SetAuthCookie(Login1.UserName, true);
                 //store user data in session
                 Session["UserName"] = Login1.UserName;
-                Response.Redirect("/Contact.aspx");
+                Response.Redirect("/Default.aspx");
             }
         }
     }
