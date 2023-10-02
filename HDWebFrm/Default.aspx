@@ -5,33 +5,62 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    
     <br />
-    <dx:aspxgridview runat="server" ID="Grd" Width="944px">
-        
+      <dx:ASPxGridView ID="Grd"  runat="server" AutoGenerateColumns="False"
+                                    Theme="Metropolis" Width="100%"
+                                    KeyFieldName="Id" Font-Size="X-Small" EnableTheming="True" AutoPostBack="True">
 
-        <SettingsPager AlwaysShowPager="True">
-        </SettingsPager>
-        <Settings ShowGroupPanel="True" ShowFooter="True" />
-        <SettingsBehavior AllowSelectByRowClick="True" />
+ 
+
+                                    <Settings ShowGroupPanel="True" ShowFooter="True" ShowFilterRow="True" />
+<Settings ShowFilterRow="True" ShowGroupPanel="True" ShowHeaderFilterButton="True" />
+<SettingsDataSecurity AllowInsert="False" />
 <SettingsPopup>
 <FilterControl AutoUpdatePosition="False"></FilterControl>
 </SettingsPopup>
- <SettingsSearchPanel Visible="True" />
+<SettingsSearchPanel Visible="True" />
+<SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="WYSIWYG" />
+
  
-        <EditFormLayoutProperties>
-            <Items>
-                <dx:GridViewColumnLayoutItem Caption="Replay" ColSpan="1">
-                </dx:GridViewColumnLayoutItem>
-            </Items>
-        </EditFormLayoutProperties>
-       
-        
 
-        
+ <Columns>
+<dx:GridViewCommandColumn ShowClearFilterButton="True" ShowDeleteButton="True" ShowEditButton="True" VisibleIndex="0">
+</dx:GridViewCommandColumn>
+<dx:GridViewDataTextColumn FieldName="Id" VisibleIndex="1" Caption="ID" ReadOnly="true" Visible="false"></dx:GridViewDataTextColumn>
+<dx:GridViewDataTextColumn FieldName="Discreption" VisibleIndex="2" Caption="Discreption"></dx:GridViewDataTextColumn>
+<dx:GridViewDataTextColumn FieldName="FrmDepartment" VisibleIndex="3" Caption="From Department"></dx:GridViewDataTextColumn>
+<dx:GridViewDataTextColumn FieldName="CreatedDate" VisibleIndex="4" Caption="Created Date" ReadOnly="true"></dx:GridViewDataTextColumn>
+<dx:GridViewDataTextColumn FieldName="Per" VisibleIndex="5" Caption="Periorty" ReadOnly="true"></dx:GridViewDataTextColumn>
+</Columns>
+ <SettingsCustomizationDialog Enabled="true" />
+<Toolbars>
+<dx:GridViewToolbar>
+<SettingsAdaptivity Enabled="true" EnableCollapseRootItemsToIcons="true" />
+<Items>
+<dx:GridViewToolbarItem Command="ExportToPdf" />
+<dx:GridViewToolbarItem Command="ExportToXls" />
+<%--  <dx:GridViewToolbarItem Command="ExportToXlsx" />--%>
+<dx:GridViewToolbarItem Command="ExportToDocx" />
+<%--   <dx:GridViewToolbarItem Command="ExportToRtf" />--%>
+<dx:GridViewToolbarItem Command="ExportToCsv" />
+</Items>
+</dx:GridViewToolbar>
+<dx:GridViewToolbar Position="Top" ItemAlign="Right">
+<Items>
+<dx:GridViewToolbarItem Command="ShowCustomizationDialog" />
+</Items>
+</dx:GridViewToolbar>
+</Toolbars>
+<TotalSummary>
+<dx:ASPxSummaryItem FieldName="CompanyName" SummaryType="Count" />
+<dx:ASPxSummaryItem FieldName="ProductAmount" SummaryType="Sum" />
+</TotalSummary>
+<GroupSummary>
+<dx:ASPxSummaryItem FieldName="ProductAmount" SummaryType="Sum" />
+<dx:ASPxSummaryItem FieldName="CompanyName" SummaryType="Count" />
+</GroupSummary>
+</dx:ASPxGridView>
 
-       
-        
 
-    </dx:aspxgridview>
-
-
+has context menu
+    
 </asp:Content>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDWebFrm", "HDWebFrm\HDWebF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackEnd", "BackEnd\BackEnd.csproj", "{3F60DFFC-90D2-4DBC-BA35-B01CC2AF4466}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityCoreDB", "EntityCoreDB\EntityCoreDB.csproj", "{ADB855EA-1B3A-43BA-BE3E-F2E5891F25A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3F60DFFC-90D2-4DBC-BA35-B01CC2AF4466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F60DFFC-90D2-4DBC-BA35-B01CC2AF4466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F60DFFC-90D2-4DBC-BA35-B01CC2AF4466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB855EA-1B3A-43BA-BE3E-F2E5891F25A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB855EA-1B3A-43BA-BE3E-F2E5891F25A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB855EA-1B3A-43BA-BE3E-F2E5891F25A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB855EA-1B3A-43BA-BE3E-F2E5891F25A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

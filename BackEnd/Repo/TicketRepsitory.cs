@@ -1,5 +1,6 @@
 ﻿using BackEnd.Core;
 using BackEnd.DataConfig;
+using BackEnd.Middelware;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -29,7 +30,7 @@ namespace BackEnd.Repo
         {
             SqlParameter param = new SqlParameter("FrmUserName", FrmUserName);
             SQLDAL.ConnectionString = conn;
-            return SQLDAL.ReturnDataTableByProcedure("[dbo].[GetByDept]", param);
+            return SQLDAL.ReturnDataTableByProcedure("[dbo].[GetByDept]", param).ToListOfType<TicketSeting>();
         }
 
         public static void FillCombo(DropDownList lst, string spname, string valf, string DataF)

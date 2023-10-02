@@ -1,5 +1,7 @@
 ﻿using BackEnd.Repo;
 using DevExpress.Web;
+using EntityCoreDB.DAL;
+using EntityCoreDB.Service;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -15,17 +17,18 @@ namespace HDWebFrm
     public partial class _Default : Page
     {
         public string UserName;
-        string conn = ConfigurationManager.ConnectionStrings["dbcon"].ConnectionString;
-
-        //Grd.Columns.Clear();
-        //var data = TicketRepsitory.GetTikByDept(UserName);
-        //Grd.DataSource = data;
-        //Grd.DataBind();
-
+        private TicketGrid _Service;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+             _Service = new TicketGrid(new dbcon());  
+              GrdInital();
 
-           
+        }
+
+        public void GrdInital()
+        {
+
             if (Session["UserName"] != null)
             {
                 UserName = Session["UserName"].ToString();
@@ -36,39 +39,13 @@ namespace HDWebFrm
                 Response.Redirect("LoginPage.aspx");
             }
 
-            var data = TicketRepsitory.GetTikByDept(UserName);
-            Grd.DataSource = data;
+           // 
+            var Result = _Service.GetAllUserTicket(UserName);
+            Grd.DataSource = Result;
             Grd.DataBind();
-
-            //using (SqlConnection cn = new SqlConnection(conn))
-            //{
-
-            //    if (cn.State != ConnectionState.Open)
-            //    {
-            //        cn.Open();
-            //    }
-
-
-            //    SqlCommand cmd = new SqlCommand("[dbo].[GetByDept]", cn);
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    cmd.Parameters.AddWithValue("@FrmUserName", UserName);
-            //    DataSet ds = new DataSet();
-            //    SqlDataAdapter da = new SqlDataAdapter();
-            //    da.SelectCommand = cmd;
-            //    da.Fill(ds, "nn");
-            //    da.SelectCommand.ExecuteScalar();
-            //    Grd.DataSource = ds;
-            //    Grd.DataBind();
-
-
-            //}
-
-
-
         }
 
 
-
-
+       
     }
 }

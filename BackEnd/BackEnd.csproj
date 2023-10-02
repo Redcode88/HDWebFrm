@@ -46,6 +46,7 @@
     <Compile Include="Core\Departments.cs" />
     <Compile Include="Core\TicketGet.cs" />
     <Compile Include="Core\TiketsModel.cs" />
+    <Compile Include="Middelware\TicketSeting.cs" />
     <Compile Include="Repo\TicketRepsitory.cs" />
     <Compile Include="DataConfig\DataStructuresConverter.cs" />
     <Compile Include="DataConfig\SQLDAL.cs" />
