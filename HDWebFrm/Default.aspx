@@ -61,6 +61,6 @@
 </dx:ASPxGridView>
 
 
-has context menu
+
     
 </asp:Content>
