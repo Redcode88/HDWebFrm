@@ -16,15 +16,64 @@ namespace EntityCoreDB.Service
         }
 
 
-        public IEnumerable<Ticket> GetAllUserTicket(string UserName)
+        //Get all closed ticket
+        public IEnumerable<Ticket> GetAllTicket(string UserName)
         {
-           return _ctx.Tickets.Where(c => c.FrmUserName == UserName).ToList();
+            return _ctx.Tickets.Where(c => c.FrmUserName == UserName && c.State == "Close").ToList();
         }
 
+        public IEnumerable<Ticket> GetAllTicketByState(string State)
+        {
+            return _ctx.Tickets.Where(c => c.State == State).ToList();
+        }
+
+        //Get ticket by username and avilabilty
+        public IEnumerable<Ticket> GetAllUserTicket(string UserName)
+        {
+           return _ctx.Tickets.Where(
+           c => c.FrmUserName == UserName &&
+           c.IsActive == true &&
+           c.State == "Open")
+           .ToList();
+        }
+
+
+        //Logical Delete for Ticket
+        public void DeleteTicket(int id)
+        {
+            var entity = _ctx.Tickets.Where(i => i.Id == id).FirstOrDefault();
+            _ctx.Entry(entity).Property(d => d.IsActive).IsModified = false;
+            _ctx.SaveChanges();
+        }
+
+        //Edit Ticket recored 
+        public void EditTicket(int id, string newDescription, string newState, bool newIsActive)
+        {
+            var entity = _ctx.Tickets.FirstOrDefault(i => i.Id == id);
+
+            if (entity != null)
+            {
+                entity.Discreption = newDescription;
+                entity.State = newState;
+                entity.IsActive = newIsActive;
+                _ctx.SaveChanges();
+            }
+        }
+
+        //Get All Tickets
         public IEnumerable<Ticket> GetAllTicket()
         {
             return _ctx.Tickets.ToList();
         }
+
+        //Delete Phiscal Recored From DataBase
+        public void RemoveTicket(int id)
+        {
+            var DeletedRecored = _ctx.Tickets.FirstOrDefault(i => i.Id == id);
+            _ctx.Tickets.Remove(DeletedRecored);
+            _ctx.SaveChanges();
+        }
+
 
     }
 }

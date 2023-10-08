@@ -11,13 +11,17 @@
 
  
 
-                                    <Settings ShowGroupPanel="True" ShowFooter="True" ShowFilterRow="True" />
 <Settings ShowFilterRow="True" ShowGroupPanel="True" ShowHeaderFilterButton="True" />
+ <SettingsCustomizationDialog Enabled="true" />
+
+ 
+
+                                    <Settings ShowGroupPanel="True" ShowFooter="True" ShowFilterRow="True" />
 <SettingsDataSecurity AllowInsert="False" />
 <SettingsPopup>
 <FilterControl AutoUpdatePosition="False"></FilterControl>
 </SettingsPopup>
-<SettingsSearchPanel Visible="True" />
+                                    <SettingsSearchPanel Visible="True" />
 <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="WYSIWYG" />
 
  
@@ -30,8 +34,9 @@
 <dx:GridViewDataTextColumn FieldName="FrmDepartment" VisibleIndex="3" Caption="From Department"></dx:GridViewDataTextColumn>
 <dx:GridViewDataTextColumn FieldName="CreatedDate" VisibleIndex="4" Caption="Created Date" ReadOnly="true"></dx:GridViewDataTextColumn>
 <dx:GridViewDataTextColumn FieldName="Per" VisibleIndex="5" Caption="Periorty" ReadOnly="true"></dx:GridViewDataTextColumn>
+     <dx:GridViewDataTextColumn Caption="State" VisibleIndex="6">
+     </dx:GridViewDataTextColumn>
 </Columns>
- <SettingsCustomizationDialog Enabled="true" />
 <Toolbars>
 <dx:GridViewToolbar>
 <SettingsAdaptivity Enabled="true" EnableCollapseRootItemsToIcons="true" />

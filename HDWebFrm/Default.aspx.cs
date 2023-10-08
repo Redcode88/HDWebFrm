@@ -39,7 +39,7 @@ namespace HDWebFrm
                 Response.Redirect("LoginPage.aspx");
             }
 
-           // 
+           
             var Result = _Service.GetAllUserTicket(UserName);
             Grd.DataSource = Result;
             Grd.DataBind();
