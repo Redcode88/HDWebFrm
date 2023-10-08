@@ -33,7 +33,7 @@ namespace BackEnd.Repo
             SQLDAL.ConnectionString = conn;
             return SQLDAL.ReturnDataTableByProcedure("[dbo].[GetByDept]", param).ToListOfType<TicketSeting>();
         }
-
+        //replay for ticket
         public static void AddReplayToTicket(Ticket_Replays model)
         {
             using (SqlConnection cn = new SqlConnection(conn))
