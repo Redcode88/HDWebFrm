@@ -27,6 +27,7 @@ namespace EntityCoreDB.DAL
         public virtual DbSet<TicketDocument> TicketDocuments { get; set; }
         public virtual DbSet<TicketState> TicketStates { get; set; }
         public virtual DbSet<TiketPeriorty> TiketPeriorties { get; set; }
+        public virtual DbSet<Ticket_Replays> Ticket_Replay { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

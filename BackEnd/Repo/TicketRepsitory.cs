@@ -1,6 +1,7 @@
 ﻿using BackEnd.Core;
 using BackEnd.DataConfig;
 using BackEnd.Middelware;
+using EntityCoreDB.DAL;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -32,6 +33,24 @@ namespace BackEnd.Repo
             SQLDAL.ConnectionString = conn;
             return SQLDAL.ReturnDataTableByProcedure("[dbo].[GetByDept]", param).ToListOfType<TicketSeting>();
         }
+
+        public static void AddReplayToTicket(Ticket_Replays model)
+        {
+            using (SqlConnection cn = new SqlConnection(conn))
+            {
+                if (cn.State != ConnectionState.Open)
+                {
+                    cn.Open();
+                }
+                SqlCommand cmd = new SqlCommand("[dbo].[ReplayTicket]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ticket_id", model.ticket_id);
+                cmd.Parameters.AddWithValue("@Replay", model.Replay);
+                cmd.Parameters.AddWithValue("@ReplayBy", model.ReplayBy);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
 
         public static void FillCombo(DropDownList lst, string spname, string valf, string DataF)
         {

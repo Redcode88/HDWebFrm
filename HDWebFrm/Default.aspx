@@ -11,7 +11,7 @@
 
  
 
-<Settings ShowFilterRow="True" ShowGroupPanel="True" ShowHeaderFilterButton="True" />
+<Settings ShowFilterRow="True" ShowGroupPanel="True" ShowHeaderFilterButton="True" HorizontalScrollBarMode="Auto" VerticalScrollBarMode="Auto" />
  <SettingsCustomizationDialog Enabled="true" />
 
  
@@ -34,7 +34,7 @@
 <dx:GridViewDataTextColumn FieldName="FrmDepartment" VisibleIndex="3" Caption="From Department"></dx:GridViewDataTextColumn>
 <dx:GridViewDataTextColumn FieldName="CreatedDate" VisibleIndex="4" Caption="Created Date" ReadOnly="true"></dx:GridViewDataTextColumn>
 <dx:GridViewDataTextColumn FieldName="Per" VisibleIndex="5" Caption="Periorty" ReadOnly="true"></dx:GridViewDataTextColumn>
-     <dx:GridViewDataTextColumn Caption="State" VisibleIndex="6">
+     <dx:GridViewDataTextColumn FieldName="State" Caption="State" VisibleIndex="6">
      </dx:GridViewDataTextColumn>
 </Columns>
 <Toolbars>

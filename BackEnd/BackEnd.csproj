@@ -52,6 +52,11 @@
     <Compile Include="DataConfig\SQLDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\EntityCoreDB\EntityCoreDB.csproj">
+      <Project>{ADB855EA-1B3A-43BA-BE3E-F2E5891F25A6}</Project>
+      <Name>EntityCoreDB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

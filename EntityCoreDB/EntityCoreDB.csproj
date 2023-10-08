@@ -68,6 +68,7 @@
     <Compile Include="DAL\Ticket.cs" />
     <Compile Include="DAL\TicketDocument.cs" />
     <Compile Include="DAL\TicketState.cs" />
+    <Compile Include="DAL\Ticket_Replays.cs" />
     <Compile Include="DAL\TiketPeriorty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\TicketGrid.cs" />
