@@ -75,5 +75,34 @@ namespace EntityCoreDB.Service
         }
 
 
+        #region Dashboread Static's
+
+
+        public int ClosedTicketCount()
+        {
+            var count = _ctx.Tickets.Where(t => t.State == "Close").Count();
+            return count;
+        }
+
+
+        public int OpendTicketCount()
+        {
+            var count = _ctx.Tickets.Where(t => t.State == "Open").Count();
+            return count;
+        }
+
+
+        public int UrgetntTicketCount()
+        {
+            var count = _ctx.Tickets.Where(t => t.Per == "Urgent").Count();
+            return count;
+        }
+
+
+        #endregion
+
+
+
+
     }
 }
