@@ -75,6 +75,15 @@ namespace EntityCoreDB.Service
         }
 
 
+        //fill state dropdownlist
+        public List<TicketState> FillState()
+        {
+            var data = _ctx.TicketStates.ToList();
+            return data;
+        }
+
+
+
         #region Dashboread Static's
 
 
